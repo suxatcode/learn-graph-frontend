@@ -248,7 +248,16 @@ export const NavigationWithContent = (props: NavigationWithContentConfig) => {
       </AppBar>
       <Box sx={{ display: "flex" }}>
         {props.withSideNavigation ? (
-          <DisplayOnlyOnLargeScreen sx={{ ...menuColors }}>
+          <DisplayOnlyOnLargeScreen
+            sx={{
+              ...menuColors,
+              color: theme.palette.text.primary,
+              backgroundColor:
+                theme.palette.mode === "light"
+                  ? theme.palette.primary.main
+                  : theme.palette.grey[800],
+            }}
+          >
             {navigationList}
           </DisplayOnlyOnLargeScreen>
         ) : null}

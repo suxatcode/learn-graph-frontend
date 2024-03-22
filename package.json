@@ -29,6 +29,7 @@
     "lexical": "^0.13.1",
     "@lexical/react": "^0.13.1",
     "@mui/icons-material": "^5.15.10",
+    "mui-image": "^1.0.7",
     "@mui/material": "^5.15.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -60,7 +61,8 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "prettier": "^3.2.5",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0"
+    "@typescript-eslint/parser": "^6.21.0",
+    "@types/mui-image": "^1.0.5"
   },
   "proxy": "http://backend:8080"
 }
