@@ -1,4 +1,11 @@
-import { Box, Typography, Divider, Link as MuiLink } from "@mui/material";
+// TODO(skep): translate this file!
+import {
+  Box,
+  Typography,
+  Divider,
+  Link as MuiLink,
+  useTheme,
+} from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { NavigationWithContent } from "./Navigation";
 
@@ -10,12 +17,21 @@ const Href = (props: any) => {
 };
 
 export const About = () => {
+  const theme = useTheme();
   const { t } = useTranslation();
   return (
     <NavigationWithContent
       withSideNavigation={true}
       content={
-        <Box component="main" sx={{ flexGrow: 1, padding: 3 }}>
+        <Box
+          component="main"
+          sx={{
+            backgroundColor: theme.palette.background.default,
+            color: theme.palette.text.primary,
+            flexGrow: 1,
+            padding: 3,
+          }}
+        >
           <TypographyMaxWidth variant="h4" gutterBottom id="about">
             {t("about.headline: About Us")}
           </TypographyMaxWidth>

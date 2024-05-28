@@ -5,7 +5,6 @@ import {
   List,
   ListItemButton,
   ListItemText,
-  Divider,
   Toolbar,
   AppBar,
   Drawer,
@@ -174,7 +173,10 @@ export const NavigationWithContent = (props: NavigationWithContentConfig) => {
         globalPath="graph"
         buttonText={LEARNGRAPH_HEADER_TEXT}
       />
-      <Divider sx={{ margin: "20px 0" }} />
+      <ListItemGlobalLink
+        globalPath="howto"
+        buttonText={t("navigation.link-to-HowTo-Page")}
+      />
       <ListItemSectionLink
         sectionID={"about"}
         buttonText={t("navigation.link-to-about-page")}
@@ -185,7 +187,6 @@ export const NavigationWithContent = (props: NavigationWithContentConfig) => {
           buttonText={t("navigation.link-to-Getting Involved!")}
         />
       </List>
-      <Divider sx={{ margin: "20px 0" }} />
       <DisplayOnlyOnSmallScreen>
         <Typography variant="overline">
           {t("navigation.settings-buttons-like-login-etc")}
@@ -264,7 +265,16 @@ export const NavigationWithContent = (props: NavigationWithContentConfig) => {
       </AppBar>
       <Box sx={{ display: "flex" }}>
         {props.withSideNavigation ? (
-          <DisplayOnlyOnLargeScreen sx={{ ...menuColors }}>
+          <DisplayOnlyOnLargeScreen
+            sx={{
+              ...menuColors,
+              color: theme.palette.text.primary,
+              backgroundColor:
+                theme.palette.mode === "light"
+                  ? theme.palette.primary.main
+                  : theme.palette.grey[800],
+            }}
+          >
             {navigationList}
           </DisplayOnlyOnLargeScreen>
         ) : null}
