@@ -7,11 +7,24 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { Trans, useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import {
+  TranslatedText,
+  TranslatedTextStandalone,
+} from "@src/shared/TranslatedText";
 
 export default function Hero() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const theme = useTheme();
+
+  // TODO: mock, delete me
+  function delayedSuccess(): Promise<string> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("success");
+      }, 2000);
+    });
+  }
 
   const headerText = (
     <Typography
@@ -50,6 +63,12 @@ export default function Hero() {
         color: theme.palette.text.secondary,
       })}
     >
+      <TranslatedTextStandalone
+        onSubmit={delayedSuccess}
+        text={{
+          translations: [{ language: "en", content: "im an eng text" }],
+        }}
+      />
       <Container
         sx={{
           display: "flex",
